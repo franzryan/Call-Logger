@@ -1,0 +1,182 @@
+:root {
+    /* Label Style Variables */
+    --label-margin: 
+    /* Input Style Variables */;
+    --input-block: block;
+    --input-border: 2px solid #0071c5;
+    --input-border-radius: 20px;
+    --input-padding: 5px;
+    --input-margin: 2px auto;
+    --input-font-size: .7rem;
+    --input-font-color: #333;
+}
+
+.call-section-container, .chat-section-container, .email-web-section-container {
+    background-color: #0071c5;
+    width: 100vw;
+    height: 97vh;
+    display: grid;
+    gap: 5px;
+    padding: 5px;
+    max-width: 30vw;
+    min-width: 466px;
+}
+
+p {
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+*:not(#phone-h2, #chat-h2, #email-web-h2) {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+body {
+    background-color: black;
+}
+
+.navigation-links {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    justify-content:space-between;
+    padding: 1vw 1vh;
+    position: fixed;
+    width: 100dvw;
+    bottom: 0;
+}
+
+.list {
+    display: inline-block;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#phone-h2, #chat-h2, #email-web-h2 {
+    text-align: center;
+    color: #0071c5;
+    position: relative;
+}
+
+.call-section-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.call-one {
+    background-color: rgb(0, 0, 0);
+    grid-column: 1 / 2;
+}
+
+.label-class > p {
+    margin: .5em 0 .5em .6em;
+    display: block;
+}
+
+.input-class {
+    display: var(--input-block);
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+    font-size: var(--input-font-size);
+    color: var(--input-font-color);
+    width: 80%;
+    min-width: 80%;
+    min-height: 7%;
+}
+
+/* sets the grid colum and BG color */
+.call-two {
+    background-color: rgb(0, 0, 0);
+    grid-column: 1/2;
+}
+
+/* aligns the P and radio butts */
+.ipa-status {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
+
+/* expands radio-butts clickable area */
+.call-two-radio {
+    width: 100%;
+    height: 100%;
+}
+/* expands the buttons area */
+.radio-buts {
+    background-color: #0071c5;
+    width: 50px;
+}
+
+/* textarea of IPA - Hides the element if IPA button is not active */
+.call-two-ipa {
+  display: none;
+}
+
+/* textarea of Mem - Hides the element if Mem button is not active */
+
+.call-two-non-ipa {
+
+}
+
+.call-three {
+    background-color: rgb(0, 0, 0);
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+/*Chat Only*/
+
+.chat-section-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.chat-one {
+    background-color: rgb(0, 0, 0);
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+
+.chat-two {
+    background-color: rgb(0, 0, 0);
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+
+.chat-three {
+    background-color: rgb(0, 0, 0);
+    grid-column: 3 / 4;
+    grid-row: 1 / 3
+}
+
+/*email-web-only*/
+
+.email-web-section-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.email-web-one {
+    background-color: rgb(0, 0, 0);
+    grid-column: 1/3;
+    grid-row: 1/3
+}
+
+.email-web-two {
+    background-color: rgb(0, 0, 0);
+    grid-column: 1/3;
+    grid-row: 3/4;
+}

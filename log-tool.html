@@ -23,79 +23,82 @@
     <section> <h2 id="phone-h2" class="container-h2">Phone</h2>
          <div class="call-section-container">
 <!--Call-One--><div class="call-one">
-            <label class="label-class"><p>Name</p>
-                <input class="input-class" type="text">
+            <label class="label-class"><p class="input-label">Name</p>
+                <input class="input-class call-inputs" type="text">
             </label>
-            <label class="label-class"><p>Email</p>
-                <input class="input-class" type="email">
+            <label class="label-class"><p class="input-label">Email</p>
+                <input class="input-class call-inputs" type="email">
             </label>
-            <label class="label-class"><p>Contact#</p>
-                <input class="input-class" type="number">
+            <label class="label-class"><p class="input-label">Contact#</p>
+                <input class="input-class call-inputs" type="number">
             </label>
-            <label class="label-class"><p>Product Code</p>
-                <input class="input-class" type="text">
+            <label class="label-class"><p class="input-label">Product Code</p>
+                <input class="input-class call-inputs" type="text">
             </label>
-            <label class="label-class"><p>Case Number</p>
-                <input class="input-class" type="text">
+            <label class="label-class"><p class="input-label">Case Number</p>
+                <input class="input-class call-inputs" type="text">
             </label>
-            <label class="label-class"><p>Issue</p>
-                <input class="input-class" type="text">
+            <label class="label-class"><p class="input-label">Issue</p>
+                <input class="input-class call-inputs" type="text">
             </label>
             </div><!--End-Call-One-->
 
 <!--Call-two--><div class="call-two">
             <div class="ipa-status">
                 <span id="ipa-type">
-                    <p class="ipa-status">IPA</p>
-                <button class="radio-buts"><input id="ipa-radio" class="call-two-radio" type="radio" name="1"></button>
+                    <p class="ipa-status">RMA</p>
+                <button class="radio-buts"><input id="ipa-radio" class="call-two-radio" type="radio" name="1" checked></button>
             </span>
             <span id="mem-type">
-                <p class="ipa-status">MEM</p>
+                <p class="ipa-status">TS</p>
                <button class="radio-buts"><input id="mem-radio" class="call-two-radio" type="radio" name="1"></button>
             </span>
             </div>
                 <div id="ipa-window" class="call-two-ipa">
-                    <label class="label-class"><p>Serial Number</p>
-                        <input class="input-class" type="text">
+                    <label class="label-class"><p class="input-label">Serial Number</p>
+                        <input class="input-class call-inputs" type="text">
                     </label >
-                    <label class="label-class"><p>SA Number</p>
-                        <input class="input-class" type="text">
+                    <label class="label-class"><p class="input-label">SA Number</p>
+                        <input class="input-class call-inputs" type="text">
                     </label>
-                    <label class="label-class"><p>Warranty Type</p>
-                        <input class="input-class" type="text">
+                    <label class="label-class"><p class="input-label">Warranty Type</p>
+                        <input class="input-class call-inputs" type="text">
                     </label>
-                    <label class="label-class"><p>Shipping Address</p>
+                    <label class="label-class"><p class="input-label">Shipping Address</p>
                         <!-- <input class="input-class" type="text" > -->
-                        <textarea id="input-class-ipa" rows="6" class="input-class"></textarea>
+                        <textarea id="input-class-ipa call-inputs" rows="6" class="input-class"></textarea>
                     </label>
                 </div>
 
                 <div id="mem-window" class="call-two-non-ipa">
-                    <label class="label-class"><p>Working Before?</p>
-                        <span>yes </span><input class="input-class-radio" type="radio" name="1" value="yes">
-                        <input class="input-class-radio last-radio-line" type="radio" name="1" value="no"><span>no</span>
+                    <label class="label-class"><p class="input-label">Working Before?</p>
+                        <span>yes </span><input class="input-class-radio call-inputs" type="radio" name="5" value="yes">
+                        <input class="input-class-radio last-radio-line call-inputs" type="radio" name="5" value="no"><span>no</span>
                     </label>
-                    <label class="label-class"><p>Newly installed?</p>
-                        <span>yes </span><input class="input-class-radio" type="radio" name="2" value="yes">
-                        <input class="input-class-radio last-radio-line" type="radio" name="2" value="no"><span>no</span>
+                    <label class="label-class"><p class="input-label">Newly installed?</p>
+                        <span>yes </span><input class="input-class-radio call-inputs" type="radio" name="2" value="yes">
+                        <input class="input-class-radio last-radio-line call-inputs" type="radio" name="2" value="no"><span>no</span>
                     </label>
-                    <label class="label-class"><p>Physical Damage?</p>
-                        <span>yes </span><input class="input-class-radio" type="radio" name="3" value="yes">
-                        <input class="input-class-radio last-radio-line" type="radio" name="3" value="no"><span>no</span>
+                    <label class="label-class"><p class="input-label">Physical Damage?</p>
+                        <span>yes </span><input class="input-class-radio call-inputs" type="radio" name="3" value="yes">
+                        <input class="input-class-radio last-radio-line call-inputs" type="radio" name="3" value="no"><span>no</span>
                     </label>
-                    <label class="label-class"><p>Used as Intended?</p>
-                        <span>yes </span><input class="input-class-radio" type="radio" name="4" value="yes">
-                      <input class="input-class-radio last-radio-line" type="radio" name="4" value="no"><span>no</span>
+                    <label class="label-class"><p class="input-label">Used as Intended?</p>
+                        <span>yes </span><input class="input-class-radio call-inputs" type="radio" name="4" value="yes">
+                      <input class="input-class-radio last-radio-line call-inputs" type="radio" name="4" value="no"><span>no</span>
                     </label>
-                    <label class="label-class"><p>Troubleshooting</p>
+                    <label class="label-class"><p class="input-label">Troubleshooting</p>
                         <!-- <input class="input-class" type="text" > -->
-                        <textarea rows="6" class="input-class-mem"></textarea>
+                        <textarea rows="6" class="input-class-mem call-inputs"></textarea>
                     </label>
                 </div>
             </div><!--End-Call-two-->
 <!--Call-three--><div class="call-three">
         <label class="label-class"><p>Call Transcript:</p>
-            <textarea class="input-class-text"></textarea>
+            <textarea id="call-log-textarea" class="input-class-text"></textarea>
+            <div class="call-three-button">
+                <div><button onclick="attachLogs()" id="attach-button"><p>Attach</p></button></div>
+            </div>
         </label>
 </div> <!--End-Call-three-->
         </div>
@@ -136,11 +139,23 @@
                 <label class="label-class" for=""><p>Notes</p>
                     <textarea class="input-class input-class-chat" name="" id="" cols="" rows="6"></textarea>
                 </label>
+                <div class="highlight-container">
+                    <input type="checkbox">
+                </div>
             </div>
             <div class="chat-three">
-                <div class="but-head"><h2>Chat Buttons</h2></div>
+                <div class="but-head">
+                    <div class="highlight-container highlight-container-one"><p>1</p>
+                        <input type="checkbox" checked>
+                    </div>
+                    <h2>Buttons</h2>
+                    <div class="highlight-container highlight-container-two">
+                        <input type="checkbox" checked><p>2</p>
+                    </div>
+                </div>
+                <div class="chat-three-but-container">
                 <div class="button-name-container"><p class="but-name">Verification</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">Product Model</p><button class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">Product</p><button class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">OEM</p><button class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">EOIS</p><button class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">SSU</p><button class="rounded-buttons"></button></div>
@@ -151,8 +166,13 @@
                 <div class="button-name-container"><p class="but-name">AFK2</p><button class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">IssueResolved</p><button class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">Embargoed</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">No Information1</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">No Information2</p><button class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">No Info1</p><button class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">No Info2</p><button class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">Tech2RMA</p><button class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">RMAWait</p><button class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">EscalNotes</p><button class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">PSATFormat</p><button class="rounded-buttons"></button></div>
+                
             </div>
         </div>
     </section>
@@ -207,17 +227,27 @@
                         </ul>
                     </div>
                 </div>
+                <div class="email-web-one-extra">
+                    <ul>
+                        <li class="email-web-contents">
+                            <button class="email-web-contents-button">Generic</button>
+                        </li>
+                        <li class="email-web-contents">
+                            <button class="email-web-contents-button">Signiture</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <!-- End of email one -->
             <div class="email-web-two">
                 <div class="email-web-two-half">
-                    <label for=""><p>Display Field</p>
-                    <textarea name="" class="email-web-two-textarea" cols="30" rows="10"></textarea>
+                    <label class="label-class"><span>Research Notes:</span>
+                    <textarea name="" class="email-web-two-textarea input-class-text" cols="30" rows="10"></textarea>
                 </label>
                 </div>
                 <div class="email-web-two-half">
-                    <label for=""><p>Addtional Notes</p>
-                        <textarea name="" class="email-web-two-textarea" cols="30" rows="10"></textarea>
+                    <label class="label-class"><span>Addtional Notes:</span>
+                        <textarea name="" class="email-web-two-textarea input-class-text" cols="30" rows="10"></textarea>
                     </label>
 
                 </div>

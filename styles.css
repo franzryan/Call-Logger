@@ -38,7 +38,8 @@ p {
 }
 
 body {
-    background-image: linear-gradient(#999, black 10%);
+    /* background-image: linear-gradient(#999, black 10%); */
+    background-color: black;
     color: white;
 }
 
@@ -162,10 +163,16 @@ main {
 }
 
 .input-class-text {
-    height: 75%;
-    width:90%;
     display: block;
     margin: auto;
+    width: 90%;
+}
+
+#call-log-textarea1 {
+    height: 35%;
+}
+#call-log-textarea2 {
+    height: 55%;
 }
 
 /*Chat Only*/
@@ -365,8 +372,4 @@ main {
 .email-web-two-half span {
     display: inline-block;
     margin: 1em
-}
-
-.email-web-two-textarea {
-    
 }

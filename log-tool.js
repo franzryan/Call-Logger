@@ -14,21 +14,15 @@ displayIpa.addEventListener("focus", () => {
     memWindow.style.display = "block";
   });
 
-  let attachInputs = document.getElementsByClassName("call-inputs");
-  let attachHere = document.getElementById("call-log-textarea");
-  let inputLabels = document.getElementsByClassName("input-label");
-  
-  function attachLogs(inputLabels, attachInputs) {
-    let inputTexts = attachHere.value; // Initialize with current textarea value
-    for (let i = 0; i < inputLabel.length && i < attachInputs.length; i++) {
-      if (attachInputs[i].type === "radio" && !attachInputs[i].checked) {
-        continue; // Skip radio buttons that are not selected
-      }
-      inputTexts += inputLabel[i].innerHTML + attachInputs[i].value + "\n";
-    }
-  
-    attachHere.value = inputTexts; //
-  }
+let firstLabels = document.getElementsByClassName("input-label1");
+let firstInputs = document.getElementsByClassName("call-inputs1");
+let attachTexts = document.getElementById("call-log-textarea1");
 
-
+function attachLogs() {
+  let firstInputsAttached = "";
+for (i = 0; i < firstLabels.length; i++) {
+  firstInputsAttached += firstLabels[i].textContent + ":" + "\n";
+}
+attachTexts.value = firstInputsAttached;
+}
   // call log section

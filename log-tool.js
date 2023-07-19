@@ -17,7 +17,6 @@ displayIpa.addEventListener("focus", () => {
 let firstLabels = document.getElementsByClassName("input-label1");
 let firstInputs = document.getElementsByClassName("call-inputs1");
 let attachTexts = document.getElementById("call-log-textarea1");
-let lastRadio = document.getElementsByClassName("last-radio-line");
 
 function attachLogs() {
   let inputsAttached = "";
@@ -25,20 +24,18 @@ for (i = 0; i < firstInputs.length; i++) {
   if (firstInputs[i].value === "") {
     continue;
   }
-  else if (firstInputs[i].type === "radio" && !firstInputs[i].checked) {
-    continue;
+  if (firstInputs[i].type === "radio") {
+    if (firstInputs[i].checked) {
+      inputsAttached += firstInputs[i].value + i + "\n";
+      continue;
+    }
   }
-  inputsAttached += firstLabels[i].textContent + i + ":" + "\n" + "\t" + firstInputs[i].value + "\n";
+  else {
+    inputsAttached += firstLabels[i].textContent + ":" + "\n" + "\t" 
+    + firstInputs[i].value + " " + i + "\n";
+  }
 }
 attachTexts.value = inputsAttached;
 };
-  // call log section
 
-  // let inputsRadioAttached = "";
-  // for (i = 0; i < callRadioBtn.length; i++) {
-  //   if (!callRadioBtn.checked) {
-  //     continue;
-  //     }
-  //     inputsRadioAttached += labelRadioBtn[i].textContent + callRadioBtn[i].value;
-  // }
-  // attachTexts.value = inputsRadioAttached;
+  // call log section

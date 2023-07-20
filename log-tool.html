@@ -109,16 +109,16 @@
         <div class="chat-section-container">
             <div class="chat-one">
                 <label class="label-class" for=""><p>Name</p>
-                    <input class="input-class" type="text" name="" id="">
+                    <input class="input-class chat-input1" type="text" name="" id="">
                 </label>
                 <label class="label-class" for=""><p>Email</p>
-                    <input class="input-class" type="email" name="" id="">
+                    <input class="input-class chat-input1" type="email" name="" id="">
                 </label>
                 <label class="label-class" for=""><p>Country</p>
-                    <input class="input-class" type="text" name="" id="">
+                    <input class="input-class chat-input1" type="text" name="" id="">
                 </label>
                 <label class="label-class" for=""><p>Contact#</p>
-                    <input class="input-class" type="number" name="" id="">
+                    <input class="input-class chat-input1" type="number" name="" id="">
                 </label>
                 <label class="label-class" for=""><p>Notes</p>
                     <textarea class="input-class input-class-chat" name="" id="" cols="" rows="6"></textarea>
@@ -126,16 +126,16 @@
             </div>
             <div class="chat-two">
                 <label class="label-class" for=""><p>Name</p>
-                    <input class="input-class" type="text" name="" id="">
+                    <input class="input-class chat-input2" type="text" name="" id="">
                 </label>
                 <label class="label-class" for=""><p>Email</p>
-                    <input class="input-class" type="email" name="" id="">
+                    <input class="input-class chat-input2" type="email" name="" id="">
                 </label>
                 <label class="label-class" for=""><p>Country</p>
-                    <input class="input-class" type="text" name="" id="">
+                    <input class="input-class chat-input2" type="text" name="" id="">
                 </label>
                 <label class="label-class" for=""><p>Contact#</p>
-                    <input class="input-class" type="number" name="" id="">
+                    <input class="input-class chat-input2" type="number" name="" id="">
                 </label>
                 <label class="label-class" for=""><p>Notes</p>
                     <textarea class="input-class input-class-chat" name="" id="" cols="" rows="6"></textarea>
@@ -152,24 +152,42 @@
                     </div>
                 </div>
                 <div class="chat-three-but-container">
-                <div class="button-name-container"><p class="but-name">Verification</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">Product</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">OEM</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">EOIS</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">SSU</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">ProbeQs</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">LMIOffer</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">LMIPrivate</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">AFK1</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">AFK2</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">IssueResolved</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">Embargoed</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">No Info1</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">No Info2</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">Tech2RMA</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">RMAWait</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">EscalNotes</p><button class="rounded-buttons"></button></div>
-                <div class="button-name-container"><p class="but-name">PSATFormat</p><button class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">Verification</p>
+                    <button onclick="copyBtns(this)" id="verify" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">Product</p>
+                    <button onclick="copyBtns(this)" id="product-model" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">OEM</p>
+                    <button onclick="copyBtns(this)" id="oem-dev" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">EOIS</p>
+                    <button onclick="copyBtns(this)" id="end-support" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">SSU</p>
+                    <button onclick="copyBtns(this)" id="ssu-log" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">ProbeQs</p>
+                    <button onclick="copyBtns(this)" id="probing-questions" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">LMIOffer</p>
+                    <button onclick="copyBtns(this)" id="lmi-offer" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">LMIPrivate</p>
+                    <button onclick="copyBtns(this)" id="lmi-privacy" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">AFK1</p>
+                    <button onclick="copyBtns(this)" id="afk1" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">AFK2</p>
+                    <button onclick="copyBtns(this)" id="afk2" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">IssueResolved</p>
+                    <button onclick="copyBtns(this)" id="issue-resolved" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">Embargoed</p>
+                    <button onclick="copyBtns(this)" id="embargoed-country" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">No Info1</p>
+                    <button onclick="copyBtns(this)" id="no-information1" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">No Info2</p>
+                    <button onclick="copyBtns(this)" id="no-information2" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">Tech2RMA</p>
+                    <button onclick="copyBtns(this)" id="tech-warranty" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">RMAWait</p>
+                    <button onclick="copyBtns(this)" id="rma-wait-time" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">EscalNotes</p>
+                    <button onclick="copyBtns(this)" id="escalation-notes" class="rounded-buttons"></button></div>
+                <div class="button-name-container"><p class="but-name">PSATFormat</p>
+                    <button onclick="copyBtns(this)" id="psat-notes" class="rounded-buttons"></button></div>
                 
             </div>
         </div>

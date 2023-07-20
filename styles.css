@@ -253,17 +253,17 @@ main {
 }
 
 .rounded-buttons {
-    border-radius: 50%;
+    border-radius: 20%;
     padding: .5em;
-    border: .2em solid #0071c5;
+    /* border: .2em solid white; */
     background-color: limegreen;
     height: 1.5em;
-    width: 1.5em;
+    width: 4em;
     margin: auto;
     display: block;
     margin-top: .25em;
     margin-bottom: .25em;
-    outline: .1em solid white;
+    outline: .1em solid #0071c5;
 }
 
 /*email-web-only*/

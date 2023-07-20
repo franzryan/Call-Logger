@@ -44,10 +44,49 @@ attachTexts.value = inputsAttached;
 
 function copyLogs() {
   let attachBothLogs = "";
-  attachBothLogs += attachTexts.value + attachTextsSecond.value + "\n";
+  attachBothLogs += attachTexts.value + "\n" + attachTextsSecond.value + "\n";
   navigator.clipboard.writeText(attachBothLogs)
- 
 }
 
-
   // call log section
+
+  // chat-log-session
+
+
+  //array for the contents of button and their id's
+  const btnObject = [ 
+    {id: 'verify', content: 'Verify Clicked'},
+    {id: 'product-model', content: 'product Clicked'},
+    {id: 'oem-dev', content: 'oem Clicked'},
+    {id: 'end-support', content: 'EOIS Clicked'},
+    {id: 'ssu-log', content: 'SSU Clicked'},
+    {id: 'probing-questions', content: 'Probing Questions Clicked'},
+    {id: 'lmi-offer', content: 'Lmi Offer CLicked'},
+    {id: 'lmi-privacy', content: 'Lmi Privacy Clicked'},
+    {id: 'afk1', content: 'Afk 1 Clicked'},
+    {id: 'afk2', content: 'afk 2 Clicked'},
+    {id: 'issue-resolved', content: 'Issue-Resolved Clicked'},
+    {id: 'embargoed-country', content: 'Embargoed Clicked'},
+    {id: 'no-information1', content: 'No Information 1 Clicked'},
+    {id: 'no-information2', content: 'No Information 2 Clicked'},
+    {id: 'tech-warranty', content: 'Tech to Warranty Clicked'},
+    {id: 'rma-wait-time', content: 'RMA wait time CLicked'},
+    {id: 'escalation-notes', content: 'Escalation-Notes CLicked'},
+    {id: 'psat-notes', content: 'Psat Notes Clicked'},
+  ];
+
+  // copy to clipboard function with for in 
+  // loops to iterate the array above
+  function copyBtns(clickedBtn) {
+    let btnContent = ""; //sets the results variable
+    let btnId = clickedBtn.id; //get the id of clicked button
+    for(identity in btnObject) { //for in loop of array
+/*condition if clicked buttons's matches the content 
+of array property's id */
+      if (btnId == btnObject[identity].id) 
+    //get the content key of the matched id
+      btnContent += btnObject[identity].content
+      //clipboard api with the results variable 
+      navigator.clipboard.writeText(btnContent)
+    }
+  }

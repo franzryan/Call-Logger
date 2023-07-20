@@ -153,6 +153,7 @@ main {
 
 .call-three-button p {
     color: #333;
+  
 }
 
 .call-three-button button {
@@ -160,6 +161,11 @@ main {
     height: 3em;
     width: 5em;
     margin: auto;
+}
+.call-three-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .input-class-text {

@@ -264,6 +264,7 @@ main {
     margin-top: .25em;
     margin-bottom: .25em;
     outline: .1em solid #0071c5;
+    cursor: pointer;
 }
 
 /*email-web-only*/
@@ -378,4 +379,8 @@ main {
 .email-web-two-half span {
     display: inline-block;
     margin: 1em
+}
+
+#place-holder {
+    display: none;
 }

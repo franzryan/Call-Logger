@@ -107,7 +107,7 @@
     
     <section><h2 id="chat-h2" class="container-h2">Chat</h2>
         <div class="chat-section-container">
-            <div class="chat-one">
+            <div id="chat-one-div" class="chat-one">
                 <label class="label-class" for=""><p>Name</p>
                     <input class="input-class chat-input1" type="text" name="" id="">
                 </label>
@@ -124,7 +124,7 @@
                     <textarea class="input-class input-class-chat" name="" id="" cols="" rows="6"></textarea>
                 </label>
             </div>
-            <div class="chat-two">
+            <div id="chat-two-div" class="chat-two">
                 <label class="label-class" for=""><p>Name</p>
                     <input class="input-class chat-input2" type="text" name="" id="">
                 </label>
@@ -144,18 +144,18 @@
             <div class="chat-three">
                 <div class="but-head">
                     <div class="highlight-container highlight-container-one"><p>1</p>
-                        <input type="checkbox" checked>
+                        <input class="chat-selector" type="checkbox" checked>
                     </div>
                     <h2>Buttons</h2>
                     <div class="highlight-container highlight-container-two">
-                        <input type="checkbox" checked><p>2</p>
+                        <input class="chat-selector" type="checkbox" checked><p>2</p>
                     </div>
                 </div>
                 <div class="chat-three-but-container">
                 <div class="button-name-container"><p class="but-name">Verification</p>
                     <button onclick="copyBtns(this)" id="verify" class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">Product</p>
-                    <button onclick="copyBtns(this)" id="product-model" class="rounded-buttons"></button></div>
+                    <button onclick="copyBtns(this)" id="empathy-statement" class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">OEM</p>
                     <button onclick="copyBtns(this)" id="oem-dev" class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">EOIS</p>
@@ -188,7 +188,7 @@
                     <button onclick="copyBtns(this)" id="escalation-notes" class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">PSATFormat</p>
                     <button onclick="copyBtns(this)" id="psat-notes" class="rounded-buttons"></button></div>
-                
+                <div id="place-holder"></div>
             </div>
         </div>
     </section>

@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
-    <body>
+    <body onload="chatSelected()">
 
         <!-- <nav>
             <div class="navigation-links">
@@ -107,35 +107,35 @@
     
     <section><h2 id="chat-h2" class="container-h2">Chat</h2>
         <div class="chat-section-container">
-            <div id="chat-one-div" class="chat-one">
+            <div class="chat-one chat-div-container"><p style="text-align: Center;">Chat One</p>
                 <label class="label-class" for=""><p>Name</p>
-                    <input class="input-class chat-input1" type="text" name="" id="">
+                    <input class="input-class chat-input1" type="text">
                 </label>
                 <label class="label-class" for=""><p>Email</p>
-                    <input class="input-class chat-input1" type="email" name="" id="">
+                    <input class="input-class chat-input1" type="email">
                 </label>
                 <label class="label-class" for=""><p>Country</p>
-                    <input class="input-class chat-input1" type="text" name="" id="">
+                    <input class="input-class chat-input1" type="text">
                 </label>
                 <label class="label-class" for=""><p>Contact#</p>
-                    <input class="input-class chat-input1" type="number" name="" id="">
+                    <input class="input-class chat-input1" type="number">
                 </label>
                 <label class="label-class" for=""><p>Notes</p>
                     <textarea class="input-class input-class-chat" name="" id="" cols="" rows="6"></textarea>
                 </label>
             </div>
-            <div id="chat-two-div" class="chat-two">
+            <div class="chat-two chat-div-container"><p style="text-align: Center;">Chat Two</p>
                 <label class="label-class" for=""><p>Name</p>
-                    <input class="input-class chat-input2" type="text" name="" id="">
+                    <input class="input-class chat-input1" type="text">
                 </label>
                 <label class="label-class" for=""><p>Email</p>
-                    <input class="input-class chat-input2" type="email" name="" id="">
+                    <input class="input-class chat-input1" type="email">
                 </label>
                 <label class="label-class" for=""><p>Country</p>
-                    <input class="input-class chat-input2" type="text" name="" id="">
+                    <input class="input-class chat-input1" type="text">
                 </label>
                 <label class="label-class" for=""><p>Contact#</p>
-                    <input class="input-class chat-input2" type="number" name="" id="">
+                    <input class="input-class chat-input1" type="number">
                 </label>
                 <label class="label-class" for=""><p>Notes</p>
                     <textarea class="input-class input-class-chat" name="" id="" cols="" rows="6"></textarea>
@@ -144,18 +144,18 @@
             <div class="chat-three">
                 <div class="but-head">
                     <div class="highlight-container highlight-container-one"><p>1</p>
-                        <input class="chat-selector" type="checkbox" checked>
+                        <input onclick="chatSelected()" class="chat-selector" type="checkbox" checked>
                     </div>
                     <h2>Buttons</h2>
                     <div class="highlight-container highlight-container-two">
-                        <input class="chat-selector" type="checkbox" checked><p>2</p>
+                        <input onclick="chatSelected()" class="chat-selector" type="checkbox" checked><p>2</p>
                     </div>
                 </div>
                 <div class="chat-three-but-container">
                 <div class="button-name-container"><p class="but-name">Verification</p>
                     <button onclick="copyBtns(this)" id="verify" class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">Product</p>
-                    <button onclick="copyBtns(this)" id="empathy-statement" class="rounded-buttons"></button></div>
+                    <button onclick="copyBtns(this)" id="product-model" class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">OEM</p>
                     <button onclick="copyBtns(this)" id="oem-dev" class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">EOIS</p>
@@ -188,7 +188,7 @@
                     <button onclick="copyBtns(this)" id="escalation-notes" class="rounded-buttons"></button></div>
                 <div class="button-name-container"><p class="but-name">PSATFormat</p>
                     <button onclick="copyBtns(this)" id="psat-notes" class="rounded-buttons"></button></div>
-                <div id="place-holder"></div>
+                
             </div>
         </div>
     </section>
@@ -272,5 +272,5 @@
     </section>
 </main>
 <script src="log-tool.js"></script>
-    </body>
+    </body  onload="chatSelected()>
 </html>

@@ -306,8 +306,14 @@ main {
 .add-textarea {
     width: 2.5em;
     height: 2.5em;
+    background-color: rgb(211, 211, 211);
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.add-textarea:active, .active {
     background-color: white;
-    border: transparent;
+    border: 1px solid black;
+    border-bottom: transparent
 }
 
 .add-text-area-cocntainer li {
@@ -318,6 +324,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .email-button-styler {
@@ -343,11 +350,13 @@ main {
     background-color: white;
 }
 
-#text-area-email {
+.text-area-email-stack {
+    position: absolute;
     height: 100%;
     width: 100%;
     border: 5px solid white;
     background-color: #ffffff;
+    display: none;
 }
 
 .email-web-one-extra {

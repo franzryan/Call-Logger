@@ -90,37 +90,86 @@ of array property's id */
       navigator.clipboard.writeText(btnContent)
     }
   }
-
   // Change the size of chat divs and textarea
   let chatDivContainer = Array.from(document.getElementsByClassName("chat-div-container"))
   let chatSelector = Array.from(document.getElementsByClassName("chat-selector"))
-  chatSelector.forEach();
   function chatSelected() {
     if (chatSelector[0].checked && chatSelector[1].checked) {
-      console.log("both are checked");
-      chatDivContainer[0].style.display = "inline"
-      chatDivContainer[0].style.gridRow = "1/2"
+      chatDivContainer[0].style.display = "inline";
+      chatDivContainer[0].style.gridRow = "1/2";
       chatDivContainer[1].style.display = "inline";
-      chatDivContainer[1].style.gridRow = "2/3"
+      chatDivContainer[1].style.gridRow = "2/3";
     }
     else if (chatSelector[0].checked && !chatSelector[1].checked) {
-      console.log("chat-1 selected")
-      chatDivContainer[1].style.display = "none"
+      chatDivContainer[1].style.display = "none";
       chatDivContainer[0].style.display = "inline";
-      chatDivContainer[0].style.gridRow = "1/3"
+      chatDivContainer[0].style.gridRow = "1/3";
     }
     else if (!chatSelector[0].checked && chatSelector[1].checked) {
-      console.log("chat-2 selected")
       chatDivContainer[0].style.display = "none";
       chatDivContainer[1].style.display = "inline";
-      chatDivContainer[1].style.gridRow = "1/3"
+      chatDivContainer[1].style.gridRow = "1/3";
     }
     else if (!chatSelector[0].checked && !chatSelector[1].checked) {
-      console.log("both unselected")
       chatDivContainer[0].style.display = "none";
       chatDivContainer[1].style.display = "none";
-    }
-    else {
-      console.log("nothing")
+    };
+  };
+
+//email-web
+
+  const tabSelector = Array.from(document.getElementsByClassName("add-textarea"))
+  const textSelector =  Array.from(document.getElementsByClassName("text-area-email-stack"))
+  let divContainer = document.getElementById("text-area-div")
+  let textContainer = document.getElementById("textarea-div")
+  let lastBtn = document.getElementById("add-button")
+
+  for(let tab of tabSelector){
+    tab.addEventListener("click", selectText)
+  }
+
+  function selectText(event) {
+    for(let tab of tabSelector){
+      if(tab.textContent == "+") {
+        continue
+      } else {
+      console.log(tabSelector.indexOf(tab))
+      tab.classList.remove("active")
+      console.log("class remove")
     }
   }
+    let clickedTab = event.target
+    let tabIndex = tabSelector.indexOf(clickedTab)
+    for(let text of textSelector){
+      text.style.display = "none"
+      text.setAttribute("disabled", "disabled")
+      let textIndex = textSelector.indexOf(text)
+      if(tabIndex === textIndex){
+        text.removeAttribute("disabled", "disabled")
+        text.style.display = "inline"
+        clickedTab.classList.add("active")
+        console.log("class added")
+        continue
+      }
+      else if(clickedTab.textContent === "+") {
+        let addBtn = document.createElement("button")
+        divContainer.append(addBtn)
+        addBtn.classList.add("add-textarea")
+        tabSelector.push(addBtn)
+        addBtn.textContent = "+"
+        console.log(tabSelector)
+        clickedTab.textContent = tabSelector.length -1
+
+        addBtn.addEventListener("click", selectText);
+// due to event propagation. a new event listner is added
+// since the first event listener only listens to the old buttons
+
+        let addText = document.createElement("textarea")
+        textContainer.append(addText)
+        addText.classList.add("text-area-email-stack")
+        textSelector.push(addText)
+        addText.textContent = textSelector.length
+        console.log(textSelector[-1])
+      }
+      }
+    }

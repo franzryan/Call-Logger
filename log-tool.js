@@ -123,6 +123,7 @@ of array property's id */
   let divContainer = document.getElementById("text-area-div")
   let textContainer = document.getElementById("textarea-div")
   let lastBtn = document.getElementById("add-button")
+  let delBtn = document.querySelector("#delete-me").addEventListener("click", deleteMe)
 
   for(let tab of tabSelector){
     tab.addEventListener("click", selectText)
@@ -133,9 +134,7 @@ of array property's id */
       if(tab.textContent == "+") {
         continue
       } else {
-      console.log(tabSelector.indexOf(tab))
       tab.classList.remove("active")
-      console.log("class remove")
     }
   }
     let clickedTab = event.target
@@ -148,7 +147,6 @@ of array property's id */
         text.removeAttribute("disabled", "disabled")
         text.style.display = "inline"
         clickedTab.classList.add("active")
-        console.log("class added")
         continue
       }
       else if(clickedTab.textContent === "+") {
@@ -157,7 +155,6 @@ of array property's id */
         addBtn.classList.add("add-textarea")
         tabSelector.push(addBtn)
         addBtn.textContent = "+"
-        console.log(tabSelector)
         clickedTab.textContent = tabSelector.length -1
 
         addBtn.addEventListener("click", selectText);
@@ -169,7 +166,24 @@ of array property's id */
         addText.classList.add("text-area-email-stack")
         textSelector.push(addText)
         addText.textContent = textSelector.length
-        console.log(textSelector[-1])
+        if(tabSelector.length == 10){
+          addBtn.style.display = "none"
+        }
+        else if (tabSelector.length < 10) {
+          addBtn.style.display = "inline"
+        }
       }
       }
+    }
+    function deleteMe(){
+      tabSelector.forEach((tab) => {
+        if(tab.classList == "add-textarea"){
+          console.log(tab.classList)
+          console.log("active found")
+        }
+        else {
+          console.log(tab.classList)
+          console.log("active not found")
+        }
+      })
     }

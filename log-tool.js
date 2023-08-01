@@ -55,25 +55,113 @@ function copyLogs() {
 
   //array for the contents of button and their id's
   const btnObject = [ 
-    {id: 'verify', content: 'Verify Clicked'},
-    {id: 'product-model', content: 'product Clicked'},
-    {id: 'oem-dev', content: 'oem Clicked'},
-    {id: 'end-support', content: 'EOIS Clicked'},
-    {id: 'ssu-log', content: 'SSU Clicked'},
-    {id: 'probing-questions', content: 'Probing Questions Clicked'},
-    {id: 'lmi-offer', content: 'Lmi Offer CLicked'},
-    {id: 'lmi-privacy', content: 'Lmi Privacy Clicked'},
-    {id: 'afk1', content: 'Afk 1 Clicked'},
-    {id: 'afk2', content: 'afk 2 Clicked'},
-    {id: 'issue-resolved', content: 'Issue-Resolved Clicked'},
-    {id: 'embargoed-country', content: 'Embargoed Clicked'},
-    {id: 'no-information1', content: 'No Information 1 Clicked'},
-    {id: 'no-information2', content: 'No Information 2 Clicked'},
-    {id: 'tech-warranty', content: 'Tech to Warranty Clicked'},
-    {id: 'rma-wait-time', content: 'RMA wait time CLicked'},
-    {id: 'escalation-notes', content: 'Escalation-Notes CLicked'},
-    {id: 'psat-notes', content: 'Psat Notes Clicked'},
+    {id: 'verify', content: 'Before we proceed, please confirm if the following is correct'
+    + ' and fill in any missing items if applicable. Please note'
+    + ' that phone number is optional, if you’d like to be contacted'
+    + ' via phone in future follow-ups please let us know.'
+    + '\n' + 'Name: '
+    + '\n' + 'Email: '
+    + '\n' + 'Country: '
+    + '\n' + 'Phone (Optional): '},
+    {id: 'empathy-statement', content: ''},
+    {id: 'oem-dev', content: 'Before we proceed, please note that this is an OEM device, we will try to assist you with general' 
+    + ' troubleshooting steps even if it’s something not traditionally covered in our support. However, if the issue still persists,' 
+    + ' you will have to contact the Original Equipment Manufacturer of your device. Your device manufacturer may have altered features,' 
+    + ' incorporated customizations, or made other changes to some components for better compatibility with your system.'},
+    {id: 'end-support', content: 'Thank you for waiting. I have checked this Intel product and' 
+    + ' please be advised that this Intel product is already in our'
+    + ' End of Interactive Support. We no longer provide'
+    + ' interactive support for this product via telephone, e-mail, or'
+    + ' chat. Please be informed that technical support will'
+    + ' continue to be available via the web and please visit our'
+    + ' support site for further technical support. Please refer to'
+    + ' this community link for discontinued products.'
+    + ' https://community.intel.com/t5/tag/Discontinued%20Products/tg-p/tag-id/919?profile.language=en'},
+    {id: 'ssu-log', content: 'Please download Intel® System Support Utility for Windows* software. When the download is complete, launch SSU.exe.'
+    + '\n' + 'Scan: Check the box Everything.'
+    + '\n' + 'Click Scan.'
+    + '\n' + 'Review: When finished scanning, click Next.'
+    + '\n' + 'Click Save.' 
+    + '\n' + 'Send the file'},
+    {id: 'probing-questions', content: 'For us to know more of the issue, we will be asking a series of questions. We may have additional questions depending on your answers.' 
+    + '\n' + 'What is the product model of your device?' 
+    + '\n' + 'When did you encounter this problem?'
+    + '\n' +'Is this a newly integrated system?'
+    + '\n' +'Any hardware or software changes before the issue?'
+    + '\n' +'Was this working before?'
+    + '\n' +'Is any troubleshooting done to attempt to resolve the issue?'},
+    {id: 'lmi-offer', content: 'Based on the details you have provided, it seems that we need to check this issue further.' 
+    + ' I suggest you take advantage of doing a remote session on your computer for faster resolution.'
+    +' Do you have access to a wired connection via (LAN cable) or Wifi that can be connected to your device so you can avail of this offering?'},
+    {id: 'lmi-privacy', content: 'To help protect your privacy, please close any web pages, documents, or applications that are not essential to resolve your support issue.' 
+    + ' When they are closed, please let me know in order to start the remote session.' 
+    + ' Just so you know, the remote session will be recorded for quality assurance purposes.'},
+    {id: 'afk1', content: 'I have not heard from you for the last 2 minutes. Would you'
+    + ' like me to keep this chat session open for you?'},
+    {id: 'afk2', content: 'Since I have not heard from you for 4 minutes, we will close'
+    + ' this chat session to assist other customers. Please do not'
+    + ' hesitate to click on the chat button again if you need'
+    + ' further assistance. Thank you.'},
+    {id: 'issue-resolved', content: 'As the issue has been resolved, we will proceed to close the'
+    + ' case. You may receive an invitation to take a survey in a '
+    + 'few days. We value your feedback and look forward to '
+    + 'hearing about your support experience. Thank you for '
+    + 'contacting Intel Customer Support. Have a nice day!'},
+    {id: 'embargoed-country', content: 'As part of Intel’s global export compliance program, we '
+    + 'perform a review of our customers and business partners '+ 'to ensure that Intel can remain in compliance with applicable law..'
+    + '\n' + 'During our review, we found information indicating that '+ 'you or your company is on a country or region where '
+    + 'Intel does not support business activities (a.k.a. '
+    + 'embargoed countries/regions), or may be on a list of '
+    + 'sanctioned or prohibited parties. As a result, we are '
+    + 'unable to move forward with this business engagement or request.'},
+    {id: 'no-information1', content: 'Please be aware that we need to get your complete name as '+ 'part of Global Export Regulations. Intel must screen '
+    + 'organizations, entities and persons with whom Intel is '
+    + 'conducting, engaging, intending to engage on a trade or '
+    + 'financial transaction. For this reason, this information is '
+    + 'required to proceed with your support request.'},
+    {id: 'no-information2', content: 'I Understand that providing us with your information may '
+    + 'be uncomfortable to you. You can always submit a '
+    + 'support request via Intel Communities</a> or seek '
+    + 'assistance with your Place of Purchase so they can open a '
+    + 'support ticket to us with their business information instead.'
+    + '\n' + 'https://community.intel.com/'},
+    {id: 'tech-warranty', content: 'Company Name: '+ '\n' +
+    'Contact Person: '+ '\n' +
+    'Email Address: '+ '\n' +
+    'Phone Number: '+ '\n' +
+    'Complete Shipping Address: '+ '\n' +
+    'Model: '+ '\n' +
+    'SA Number/FPO Number: '+ '\n' +
+    'SN/ATPO Number: '+ '\n' +
+    'Date of purchase: '+ '\n' +
+    'Fault Description: '+ '\n' +
+    'Is there any sign of physical damage? '+ '\n' +
+    'Next Steps'},
+    {id: 'rma-wait-time', content: 'Please be advised that we are forwarding your case to our '
+    + 'warranty team, and they will be in touch with you within 1-'
+    + '2 business days. We appreciate your cooperation and '
+    + 'patience during this process. Thank you.'},
+    {id: 'escalation-notes', content: 'Summary of the issue:'
+    + '\n' + '\n' +
+    'Error message - snaps/screenshot:'
+    + '\n' + '\n' +
+    'Troubleshooting steps:'
+    + '\n' + '\n' +
+    'Other relevant snaps of the system:'
+    + '\n' + '\n' +
+    'Log files:'
+    + '\n' + '\n' +
+    'System configuration:'
+    + '\n' + '\n' +
+    'Agent Research:'
+    + '\n' + '\n' +
+    'Help needed:'
+    + '\n'},
+    {id: 'psat-notes', content: 'Why PSAT is rated as Dissatisfied' 
+    + '\n' +'Steps taken so far'
+    + '\n' +'Recommended steps found in database'},
   ];
+
 
   // copy to clipboard function with for in 
   // loops to iterate the array above

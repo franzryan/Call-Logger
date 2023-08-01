@@ -214,20 +214,32 @@ of array property's id */
   let delBtn = document.querySelector("#delete-me").addEventListener("click", deleteMe)
 
   for(let tab of tabSelector){
+    let btnValue = tabSelector.indexOf(tab)
+    tab.textContent = btnValue + 1;
+    // tab.textContent = "asd";
+    if (btnValue == tabSelector.length - 1){
+      tab.textContent = "+"
+      console.log("should be +")
+    }
     tab.addEventListener("click", selectText)
   }
 
   function selectText(event) {
+    console.log("btn Clicked")
     for(let tab of tabSelector){
       if(tab.textContent == "+") {
+        console.log("tab.textContent == +")
         continue
       } else {
       tab.classList.remove("active")
+      console.log("remove active class")
     }
   }
     let clickedTab = event.target
     let tabIndex = tabSelector.indexOf(clickedTab)
+    console.log("before text selector iterator")
     for(let text of textSelector){
+      console.log("text selector iterated")
       text.style.display = "none"
       text.setAttribute("disabled", "disabled")
       let textIndex = textSelector.indexOf(text)
@@ -237,7 +249,7 @@ of array property's id */
         clickedTab.classList.add("active")
         continue
       }
-      else if(clickedTab.textContent === "+") {
+      if(clickedTab.textContent === "+") {
         let addBtn = document.createElement("button")
         divContainer.append(addBtn)
         addBtn.classList.add("add-textarea")
@@ -253,7 +265,6 @@ of array property's id */
         textContainer.append(addText)
         addText.classList.add("text-area-email-stack")
         textSelector.push(addText)
-        addText.textContent = textSelector.length
         if(tabSelector.length == 10){
           addBtn.style.display = "none"
         }
@@ -265,12 +276,20 @@ of array property's id */
     }
     function deleteMe(){
       tabSelector.forEach((tab) => {
-        if(tab.classList == "add-textarea"){
-          console.log(tab.classList)
+        if(tab.classList == "add-textarea active"){
           console.log("active found")
+          let indexOfTab = tabSelector.indexOf(tab)
+          tabSelector.splice(indexOfTab, 1)
+          tab.remove()
+        textSelector.forEach(text => {
+          let indexOfText = textSelector.indexOf(text)
+          if(indexOfTab == indexOfText){
+            textSelector.splice(indexOfText, 1)
+            text.remove()
+          }
+        })
         }
         else {
-          console.log(tab.classList)
           console.log("active not found")
         }
       })

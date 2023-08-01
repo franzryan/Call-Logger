@@ -1,4 +1,8 @@
 // Call Log Section
+const bodyElement = document.querySelector('body');
+// bodyElement.addEventListener('load', chatSelected);
+// bodyElement.addEventListener('load', nameIt);
+
 
 let displayIpa = document.getElementById("ipa-radio");
 let displayMem = document.getElementById("mem-radio");
@@ -213,84 +217,76 @@ of array property's id */
   let lastBtn = document.getElementById("add-button")
   let delBtn = document.querySelector("#delete-me").addEventListener("click", deleteMe)
 
-  for(let tab of tabSelector){
-    let btnValue = tabSelector.indexOf(tab)
-    tab.textContent = btnValue + 1;
-    // tab.textContent = "asd";
-    if (btnValue == tabSelector.length - 1){
-      tab.textContent = "+"
-      console.log("should be +")
-    }
-    tab.addEventListener("click", selectText)
-  }
+  //naming of btn
+  tabSelector.forEach((tab) => {
+    let indexTab = tabSelector.indexOf(tab);
+    let lastIndex = tabSelector.length - 1; //get the last element array
+    tab.textContent = indexTab + 1;
+    tabSelector[lastIndex].textContent = "+"; //give name to last element
+    tab.addEventListener("click", selectMe);
+    })
 
-  function selectText(event) {
-    console.log("btn Clicked")
-    for(let tab of tabSelector){
-      if(tab.textContent == "+") {
-        console.log("tab.textContent == +")
-        continue
-      } else {
-      tab.classList.remove("active")
-      console.log("remove active class")
-    }
-  }
-    let clickedTab = event.target
-    let tabIndex = tabSelector.indexOf(clickedTab)
-    console.log("before text selector iterator")
-    for(let text of textSelector){
-      console.log("text selector iterated")
-      text.style.display = "none"
-      text.setAttribute("disabled", "disabled")
-      let textIndex = textSelector.indexOf(text)
-      if(tabIndex === textIndex){
-        text.removeAttribute("disabled", "disabled")
+//display text & add content with + btn
+function selectMe(){
+  //get only targeted/clicked element
+  let selected = event.target
+  //run a for loop with tabselector
+  for(let tab of tabSelector) {
+    let indexTab = tabSelector.indexOf(selected) //store index of clicked element
+    tab.classList.remove("active")
+    //skips + button in iteration & add text and button elements + run active class list for buttons
+    if(selected.textContent === "+") {
+      //addElements add button and textarea
+      addElements()
+      function addElements() {
+        let createBtn = document.createElement("button");
+        divContainer.append(createBtn);
+        tabSelector.push(createBtn);
+        createBtn.classList.add("add-textarea");
+        createBtn.textContent = "+";
+        selected.textContent = tabSelector.length -1;
+
+        createBtn.addEventListener("click", selectMe);
+
+        let createTxt = document.createElement("textarea");
+        textContainer.append(createTxt);
+        textSelector.push(createTxt);
+        createTxt.classList.add("text-area-email-stack")
+      }
+      //else will handle text display per tab
+    } else {
+      selected.classList.add("active")
+      //run a for loop for textSelector to access the elements
+  for(let text of textSelector) {
+    let indexText = textSelector.indexOf(text) //get the index only of text
+    //display text if index of button and text matches
+    if (indexTab == indexText){
         text.style.display = "inline"
-        clickedTab.classList.add("active")
-        continue
+    }
+    //otherwise set display to none
+    else {
+        text.style.display = "none"
+    }
       }
-      if(clickedTab.textContent === "+") {
-        let addBtn = document.createElement("button")
-        divContainer.append(addBtn)
-        addBtn.classList.add("add-textarea")
-        tabSelector.push(addBtn)
-        addBtn.textContent = "+"
-        clickedTab.textContent = tabSelector.length -1
+  }
+  }
+}
 
-        addBtn.addEventListener("click", selectText);
-// due to event propagation. a new event listner is added
-// since the first event listener only listens to the old buttons
-
-        let addText = document.createElement("textarea")
-        textContainer.append(addText)
-        addText.classList.add("text-area-email-stack")
-        textSelector.push(addText)
-        if(tabSelector.length == 10){
-          addBtn.style.display = "none"
-        }
-        else if (tabSelector.length < 10) {
-          addBtn.style.display = "inline"
-        }
+function deleteMe(tab){
+  for(let tab of tabSelector){
+    if(tab.classList.contains("active")){
+      let indexOfTab = tabSelector.indexOf(tab)
+      tabSelector.splice(indexOfTab, 1)
+      tab.remove()
+      console.log(tab)
+      for(let text of textSelector){
+        let indexOfText = textSelector.indexOf(text)
+        if(indexOfTab == indexOfText){
+        textSelector.splice(indexOfText, 1)
+        text.remove()
+        console.log(text)
       }
       }
     }
-    function deleteMe(){
-      tabSelector.forEach((tab) => {
-        if(tab.classList == "add-textarea active"){
-          console.log("active found")
-          let indexOfTab = tabSelector.indexOf(tab)
-          tabSelector.splice(indexOfTab, 1)
-          tab.remove()
-        textSelector.forEach(text => {
-          let indexOfText = textSelector.indexOf(text)
-          if(indexOfTab == indexOfText){
-            textSelector.splice(indexOfText, 1)
-            text.remove()
-          }
-        })
-        }
-        else {
-          console.log("active not found")
-        }
-      })
-    }
+  }
+}

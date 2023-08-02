@@ -235,7 +235,7 @@ function selectMe(){
     let indexTab = tabSelector.indexOf(selected) //store index of clicked element
     tab.classList.remove("active")
     //skips + button in iteration & add text and button elements + run active class list for buttons
-    if(selected.textContent === "+") {
+    if(selected.textContent === "+" && tabSelector.length !== 10) {
       //addElements add button and textarea
       addElements()
       function addElements() {
@@ -259,9 +259,11 @@ function selectMe(){
       //run a for loop for textSelector to access the elements
   for(let text of textSelector) {
     let indexText = textSelector.indexOf(text) //get the index only of text
+    text.setAttribute("disabled", "disabled")
     //display text if index of button and text matches
     if (indexTab == indexText){
         text.style.display = "inline"
+        text.removeAttribute("disabled")
     }
     //otherwise set display to none
     else {
@@ -271,8 +273,8 @@ function selectMe(){
   }
   }
 }
-
-function deleteMe(tab){
+//delete function
+function deleteMe(){
   for(let tab of tabSelector){
     if(tab.classList.contains("active")){
       let indexOfTab = tabSelector.indexOf(tab)
@@ -289,4 +291,19 @@ function deleteMe(tab){
       }
     }
   }
+  //update the textcontent of btns
+  tabSelector.forEach((tab) => {
+    let indexTab = tabSelector.indexOf(tab);
+    let lastIndex = tabSelector.length - 1; //get the last element array
+    tab.textContent = indexTab + 1;
+    tabSelector[lastIndex].textContent = "+"; //give name to last element
+  })
+}
+
+let btnStyle = document.getElementsByClassName("bi")
+
+
+
+for(let text of textSelector) {
+  text.addEventListener("select",styleMe)
 }

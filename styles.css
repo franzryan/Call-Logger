@@ -202,8 +202,6 @@ main {
     display:none
 }
 
-.chat-input1 {}
-
 .highlight-container {
     display: inline;
     position: absolute;
@@ -345,15 +343,16 @@ main {
 }
 
 .li-button-styler > button {
-    width: 2.5em;
-    height: 2.5em;
     border: transparent;
     background-color: white;
 }
 
+.button-styler {
+    padding: .5em;
+    margin: 0 .1em;
+}
+
 #delete-me {
-    width: 5.5em;
-    height: 2.5em;
     border: transparent;
     background-color: #333;
     color: red;

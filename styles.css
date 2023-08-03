@@ -368,6 +368,9 @@ main {
     border: 5px solid white;
     background-color: #ffffff;
     display: none;
+    color: black;
+    font-size: 1rem;
+    overflow: scroll;
 }
 
 .email-web-one-extra {

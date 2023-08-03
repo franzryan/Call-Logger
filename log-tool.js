@@ -248,9 +248,10 @@ function selectMe(){
 
         createBtn.addEventListener("click", selectMe);
 
-        let createTxt = document.createElement("textarea");
+        let createTxt = document.createElement("div");
         textContainer.append(createTxt);
         textSelector.push(createTxt);
+        createTxt.setAttribute("contenteditable", "")
         createTxt.classList.add("text-area-email-stack")
       }
       //else will handle text display per tab
@@ -300,10 +301,3 @@ function deleteMe(){
   })
 }
 
-let btnStyle = document.getElementsByClassName("bi")
-
-
-
-for(let text of textSelector) {
-  text.addEventListener("select",styleMe)
-}

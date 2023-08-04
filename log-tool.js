@@ -35,8 +35,7 @@ for (i = 0; i < firstInputs.length; i++) {
       inputsAttached += firstInputs[i].name + ": " + firstInputs[i].value + "\n";
     }}
   else {
-    inputsAttached += firstLabels[i].textContent + ": "
-    + firstInputs[i].value + "\n";}
+    inputsAttached += firstLabels[i].textContent + ": " + firstInputs[i].value + "\n";}
   }
   if (lastInput.value === "") {
     includeLastInput = false;
@@ -185,26 +184,32 @@ of array property's id */
   // Change the size of chat divs and textarea
   let chatDivContainer = Array.from(document.getElementsByClassName("chat-div-container"))
   let chatSelector = Array.from(document.getElementsByClassName("chat-selector"))
+  let chatText = Array.from(document.getElementsByClassName("input-class-chat"))
   function chatSelected() {
     if (chatSelector[0].checked && chatSelector[1].checked) {
       chatDivContainer[0].style.display = "inline";
       chatDivContainer[0].style.gridRow = "1/2";
       chatDivContainer[1].style.display = "inline";
       chatDivContainer[1].style.gridRow = "2/3";
+      chatText[0].style.height = "25%";
+      chatText[1].style.height = "25%";
     }
     else if (chatSelector[0].checked && !chatSelector[1].checked) {
       chatDivContainer[1].style.display = "none";
       chatDivContainer[0].style.display = "inline";
       chatDivContainer[0].style.gridRow = "1/3";
+      chatText[0].style.height = "45%";
     }
     else if (!chatSelector[0].checked && chatSelector[1].checked) {
       chatDivContainer[0].style.display = "none";
       chatDivContainer[1].style.display = "inline";
       chatDivContainer[1].style.gridRow = "1/3";
+      chatText[1].style.height = "45%";
     }
     else if (!chatSelector[0].checked && !chatSelector[1].checked) {
       chatDivContainer[0].style.display = "none";
       chatDivContainer[1].style.display = "none";
+      chatText.style.height = "";
     };
   };
 
@@ -245,9 +250,7 @@ function selectMe(){
         createBtn.classList.add("add-textarea");
         createBtn.textContent = "+";
         selected.textContent = tabSelector.length -1;
-
         createBtn.addEventListener("click", selectMe);
-
         let createTxt = document.createElement("div");
         textContainer.append(createTxt);
         textSelector.push(createTxt);
@@ -260,15 +263,15 @@ function selectMe(){
       //run a for loop for textSelector to access the elements
   for(let text of textSelector) {
     let indexText = textSelector.indexOf(text) //get the index only of text
-    text.setAttribute("disabled", "disabled")
     //display text if index of button and text matches
-    if (indexTab == indexText){
+    if (indexTab === indexText){
         text.style.display = "inline"
-        text.removeAttribute("disabled")
+        text.classList.add("activeText")
     }
     //otherwise set display to none
     else {
         text.style.display = "none"
+        text.classList.remove("activeText")
     }
       }
   }

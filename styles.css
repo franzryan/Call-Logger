@@ -342,13 +342,28 @@ main {
     display: inline-block;
 }
 
-.email-button-styler-span {
-    color: #333;
-}
 
 .li-button-styler > button {
     border: transparent;
     background-color: white;
+    position:relative;
+}
+
+.hyperlink-tooltip {
+    position: absolute;
+    background-color: #333;
+    left: 30%;
+    border: var(--input-border);
+    width: 60%;
+    padding: .5em 0;
+}
+
+#hyperlink-div {
+    display:none;
+}
+
+.hyperlink-tooltip button {
+    border: var(--input-border);
 }
 
 .button-styler {
@@ -412,4 +427,11 @@ main {
 .email-web-two-half span {
     display: inline-block;
     margin: 1em
+}
+
+.save-cancel {
+    display: inline-block;
+    height: 2.5em;
+    width: 5em;
+    margin: .5em
 }

@@ -304,3 +304,28 @@ function deleteMe(){
   })
 }
 
+function createLink() {
+  // Get the currently selected text on the webpage as a string
+  let selection = document.getSelection().getRangeAt(0);
+  let selectedText = selection.toString();
+  let hyperlinkBtn = document.getElementById('hyperlink')
+  // Check if there is any selected text
+  if (selection) {
+    hyperlinkBtn.removeAttribute("disabled", "")
+    // Create a new <a> (link) element
+    let linkElement = document.createElement("a");
+
+    // Set the href attribute of the link element to the desired URL
+    linkElement.href = prompt('Enter your URL')
+
+    // Set the text content of the link element to the selected text
+    linkElement.textContent = selectedText;
+
+    // Get the range of the currently selected text and delete its contents
+    // let range = selection.getRangeAt(0);
+    selection.deleteContents();
+
+    // Insert the link element containing the selected text at the selected range
+    selection.insertNode(linkElement);
+  } 
+}

@@ -336,3 +336,51 @@ let hyperLinkBtn = document.getElementById("hyperlink").addEventListener("click"
       linkElement = ""
     }
 })
+
+function genericTs() {
+  let addTextArea = Array.from(document.getElementsByClassName("text-area-email-stack"));
+  addTextArea.forEach((textarea) => {
+    if (textarea.classList.contains("activeText")) {
+      console.log("hello")
+      let introduction = 
+        ["Greetings from Intel Customer Support. We appreciate the opportunity to assist you. It has come to our attention that you're currently encountering [ISSUE] with your [DEVICE]. We truly understand how such technical challenges can impact your experience. Please rest assured that our team is dedicated to providing you with the necessary expertise and support to tackle this issue head-on. Your satisfaction is our priority, and we're committed to ensuring that your [DEVICE] performs seamlessly." + "<br>" + "<br>" + "If you could kindly share more details about the issue you're facing, we'll be able to tailor our assistance to your specific situation. Our goal is to get your [DEVICE] back to its optimal state and have you back on track as soon as possible.",
+        "Greetings from Intel Customer Support. We're here to lend a helping hand as you navigate the [ISSUE] with your [DEVICE]. We understand the frustration such challenges can bring, and we're committed to resolving this for you. Our team of experts is ready to offer tailored solutions to ensure your [DEVICE] functions seamlessly once again." + "<br>" + "<br>" + "Please share more details about the issue so we can address it effectively and get you back to optimal performance.",
+        "Greetings from Intel Customer Support. We're here to provide the support you need regarding the [ISSUE] on your [DEVICE]. We understand the importance of a smooth experience and are dedicated to getting things back on track for you. Our team is ready to offer expert guidance and solutions to resolve this matter promptly." + "<br>" + "<br>" + "Please share more details about the issue so we can assist you effectively.",
+        "Greetings from Intel Customer Support. We recognize that you're currently facing [ISSUE] with your [DEVICE]. We're here to provide the necessary assistance to overcome this challenge and restore your [DEVICE] to its best performance." + "<br>" + "<br>" + " Our dedicated team is eager to work with you, so please share additional information about the issue. This will enable us to offer precise solutions and get you back to a seamless experience.",
+        "Greetings from Intel Customer Support. Your [DEVICE] facing [ISSUE] is our priority concern. We understand how important it is to have it functioning optimally, and we're here to assist you every step of the way. Our team is well-prepared to provide you with expert guidance and solutions." + "<br>" + "<br>" + "Please share more details about the issue, so we can tailor our assistance to your specific needs."]
+        let randomIntro = Math.floor(Math.random() * introduction.length);
+        let selectedIntroduction = introduction[randomIntro];
+      let genericTroubleshoot = 
+       "<br>" + "<br>" + "Can you describe the issue more to us?" 
+      + "<br>" + "If we have the same device, what are the steps we need to take to recreate the problem?" 
+      + "<br>" + "Was this working before?" 
+      + "<br>" + "Have you made any changes like software, driver, recent installations, or hardware upgrades that resulted into this issue?" 
+      + "<br>" + "Have you performed any troubleshooting steps as an attempt to fix the problem?" 
+      + "<br>" + "Is this a newly installed system?" 
+      + "<br>" + "Is the problem caused by a physical damage?" 
+      + "<br>" + "What is the use of your device? (Web browsing, Gaming, Acts as a Server, Kiosk, etc." 
+      + "<br>" + "<br>" + "For us to have a peak on your system's configuration, please download Intel® System Support Utility for Windows* software. When the download is complete, launch SSU.exe." 
+      + "<br>" + "https://www.intel.com/content/www/us/en/download/18377/intel-system-support-utility-for-windows.html" 
+      + "<br>" + "Scan: " 
+      + "<br>" + "Check the box Everything." 
+      + "<br>" + "Click Scan." 
+      + "<br>" + "Review: When finished scanning," 
+      + "<br>" + "click Next." 
+      + "<br>" + "Click Save." 
+      + "<br>" + "Send the file"
+      + "<br>" + "<br>"
+      let nextSentence = 
+      ["Would it be acceptable if we reach out to you again on [DATE] if we haven't heard back from you by then?",
+      "Is it alright if we send you a reminder on [DATE] in the event that we haven't gotten a reply from you?",
+      "If we haven't received a response from you by [DATE], would you mind if we sent you a follow-up message?",
+      "Should we plan to send you a follow-up on [DATE] if we don't receive your response before then?",
+      "Could we schedule a follow-up communication for [DATE] in case we do not obtain a response from you in the meantime?"]
+      let randomNext = Math.floor(Math.random() * nextSentence.length);
+      let selectedSentence = nextSentence[randomNext];
+      let signiture = "<br>" + "<br>" + "Best regards," + "<br>" + "Francis Ryan P." + "<br>" + "Intel Customer Support Technician"
+      let genericResponse = selectedIntroduction + genericTroubleshoot + selectedSentence + signiture
+      textarea.innerHTML = genericResponse
+
+    }
+  })
+}

@@ -81,6 +81,7 @@ function copyLogs() {
     + ' this community link for discontinued products.'
     + ' https://community.intel.com/t5/tag/Discontinued%20Products/tg-p/tag-id/919?profile.language=en'},
     {id: 'ssu-log', content: 'Please download Intel® System Support Utility for Windows* software. When the download is complete, launch SSU.exe.'
+    + '\n' + "https://www.intel.com/content/www/us/en/download/18377/intel-system-support-utility-for-windows.html"
     + '\n' + 'Scan: Check the box Everything.'
     + '\n' + 'Click Scan.'
     + '\n' + 'Review: When finished scanning, click Next.'
@@ -194,20 +195,20 @@ of array property's id */
       chatDivContainer[0].style.gridRow = "1/2";
       chatDivContainer[1].style.display = "inline";
       chatDivContainer[1].style.gridRow = "2/3";
-      chatText[0].style.height = "25%";
-      chatText[1].style.height = "25%";
+      chatText[0].style.height = "80%";
+      chatText[1].style.height = "80%";
     }
     else if (chatSelector[0].checked && !chatSelector[1].checked) {
       chatDivContainer[1].style.display = "none";
       chatDivContainer[0].style.display = "inline";
       chatDivContainer[0].style.gridRow = "1/3";
-      chatText[0].style.height = "45%";
+      chatText[0].style.height = "80%";
     }
     else if (!chatSelector[0].checked && chatSelector[1].checked) {
       chatDivContainer[0].style.display = "none";
       chatDivContainer[1].style.display = "inline";
       chatDivContainer[1].style.gridRow = "1/3";
-      chatText[1].style.height = "45%";
+      chatText[1].style.height = "80%";
     }
     else if (!chatSelector[0].checked && !chatSelector[1].checked) {
       chatDivContainer[0].style.display = "none";

@@ -202,10 +202,6 @@ main {
     display:none
 }
 
-.input-class-chat {
-    height: 25%;
-}
-
 .highlight-container {
     display: inline;
     position: absolute;

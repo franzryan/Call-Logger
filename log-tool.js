@@ -163,6 +163,9 @@ function copyLogs() {
     {id: 'psat-notes', content: 'Why PSAT is rated as Dissatisfied' 
     + '\n' +'Steps taken so far'
     + '\n' +'Recommended steps found in database'},
+    {id: 'other-lang', content: 'Why PSAT is rated as Dissatisfied' 
+    + '\n' +'Steps taken so far'
+    + '\n' +'Recommended steps found in database'},
   ];
 
 
@@ -369,18 +372,69 @@ function genericTs() {
       + "<br>" + "Click Save." 
       + "<br>" + "Send the file"
       + "<br>" + "<br>"
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const date = new Date()
+            date.setDate(date.getDate() + 2);
+            if (date.getDay() === 0 || date.getDay() === 6) {
+              date.setDate(date.getDate() + 2);
+            }
+            const m = months[date.getMonth()]
+            const D = date.getDate()
+            const d = days[date.getDay()]
+              let nextDate = m + " " + D + ", " + d
       let nextSentence = 
-      ["Would it be acceptable if we reach out to you again on [DATE] if we haven't heard back from you by then?",
-      "Is it alright if we send you a reminder on [DATE] in the event that we haven't gotten a reply from you?",
-      "If we haven't received a response from you by [DATE], would you mind if we sent you a follow-up message?",
-      "Should we plan to send you a follow-up on [DATE] if we don't receive your response before then?",
-      "Could we schedule a follow-up communication for [DATE] in case we do not obtain a response from you in the meantime?"]
+      ["Would it be acceptable if we reach out to you again on " + nextDate + " if we haven't heard back from you by then?",
+      "Is it alright if we send you a reminder on " + nextDate + " in the event that we haven't gotten a reply from you?",
+      "If we haven't received a response from you by " + nextDate + ", would you mind if we sent you a follow-up message?",
+      "Should we plan to send you a follow-up on " + nextDate + " if we don't receive your response before then?",
+      "Could we schedule a follow-up communication for " + nextDate + " in case we do not obtain a response from you in the meantime?"]
       let randomNext = Math.floor(Math.random() * nextSentence.length);
       let selectedSentence = nextSentence[randomNext];
-      let signiture = "<br>" + "<br>" + "Best regards," + "<br>" + "Francis Ryan P." + "<br>" + "Intel Customer Support Technician"
+      let signiture = "<br>" + "<br>" + "Best regards," + "<br>" + "<br>" + "Francis Ryan P." + "<br>" + "Intel Customer Support Technician"
       let genericResponse = selectedIntroduction + genericTroubleshoot + selectedSentence + signiture
       textarea.innerHTML = genericResponse
-
     }
   })
 }
+
+  function signiture(){
+    let addTextArea = Array.from(document.getElementsByClassName("text-area-email-stack"));
+    addTextArea.forEach((textarea) => {
+      if (textarea.classList.contains("activeText")) {
+        let mySig = "<br>" + "Best regards," + "<br>" + "<br>" + "Francis Ryan P." + "<br>" + "Intel Customer Support Technician"
+        let currentText = textarea.innerHTML + mySig
+        textarea.innerHTML = currentText
+      }
+    })
+    }
+
+    function next(){
+      let addTextArea = Array.from(document.getElementsByClassName("text-area-email-stack"));
+      addTextArea.forEach((textarea) => {
+        if (textarea.classList.contains("activeText")) {
+          const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+          const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                const date = new Date()
+                date.setDate(date.getDate() + 2);
+                if (date.getDay() === 0 || date.getDay() === 6) {
+                  date.setDate(date.getDate() + 2);
+                }
+                const m = months[date.getMonth()]
+                const D = date.getDate()
+                const d = days[date.getDay()]
+                  let nextDate = m + " " + D + ", " + d
+          let nextSentence = 
+      ["Would it be acceptable if we reach out to you again on " + nextDate + " if we haven't heard back from you by then?",
+      "Is it alright if we send you a reminder on " + nextDate + " in the event that we haven't gotten a reply from you?",
+      "If we haven't received a response from you by " + nextDate + ", would you mind if we sent you a follow-up message?",
+      "Should we plan to send you a follow-up on " + nextDate + " if we don't receive your response before then?",
+      "Could we schedule a follow-up communication for " + nextDate + " in case we do not obtain a response from you in the meantime?"]
+      let randomNext = Math.floor(Math.random() * nextSentence.length);
+      let selectedSentence = nextSentence[randomNext];
+      let currentText = textarea.innerHTML + "<br>" + "<br>" + selectedSentence
+        textarea.innerHTML = currentText
+        
+        }
+      })
+    }
